@@ -5,6 +5,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:dev": "concurrently \"npm run serve-proxy\" \"npm run nodemon\"",
+    "serve-proxy": "ng server --proxy-config proxy.conf.json",
+    "nodemon": "cd server && nodemon server.js",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -27,6 +30,7 @@
     "express": "^4.16.2",
     "http": "0.0.0",
     "morgan": "^1.9.0",
+    "nodemon": "^1.15.1",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
