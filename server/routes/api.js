@@ -10,13 +10,12 @@ router.get('/todaysPairs', (req, res) => {
     date : new Date(),
     teams : [
       {
-        myAssortment : {
-          members : ['Ryan', 'Kris', 'Patrick', 'Francisco'],
-          pairs : {
-            'Ryan' : 'Kris',
-            'Patrick' : 'Francisco'
-          }
-        }
+        teamName : 'myAssortment',
+        members : ['Ryan', 'Kris', 'Patrick', 'Francisco'],
+        pairs : [
+          ['Ryan', 'Kris'],
+          ['Patrick', 'Francisco']
+        ]
       }
     ]
   };

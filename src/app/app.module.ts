@@ -2,19 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { HttpClientModule }    from '@angular/common/http';
-import { AppComponent } from './app.component';
-import { PairService } from './pair.service';
+import { PairComponent } from './home/pair.home.component';
+import { PairService } from './service/pair.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    PairComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule
   ],
   providers: [PairService],
-  bootstrap: [AppComponent]
+  bootstrap: [PairComponent]
 })
 export class AppModule { }
