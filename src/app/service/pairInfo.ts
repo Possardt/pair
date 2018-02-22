@@ -1,8 +1,8 @@
 export class PairInfo {
-  date: Date,
+  date: Date;
   teams : {
     teamName : string,
     members  : string[],
-    pairs    : [string[]]
-  }[]
+    pairs    : string[][]
+  }[];
 }

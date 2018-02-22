@@ -5,6 +5,8 @@ import { HttpClientModule }    from '@angular/common/http';
 import { PairComponent } from './home/pair.home.component';
 import { PairService } from './service/pair.service';
 
+import { MomentModule } from 'angular2-moment/moment.module';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { PairService } from './service/pair.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    MomentModule
   ],
   providers: [PairService],
   bootstrap: [PairComponent]

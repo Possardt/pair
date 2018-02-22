@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PairService } from '../service/pair.service';
 import { PairInfo } from '../service/pairInfo';
+import { MomentModule } from 'angular2-moment/moment.module';
 
 @Component({
   selector: 'pair-home',
