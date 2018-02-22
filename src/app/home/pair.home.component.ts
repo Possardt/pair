@@ -3,6 +3,7 @@ import { PairService } from '../service/pair.service';
 import { DayInfo } from '../service/DayInfo';
 import { MomentModule } from 'angular2-moment/moment.module';
 import { TeamComponent } from '../team/team.component';
+import { PearLoader } from '../loader/pear.loader.component';
 
 @Component({
   selector: 'pair-home',

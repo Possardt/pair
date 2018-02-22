@@ -1,10 +1,6 @@
 const express = require('express');
 const router  = express.Router();
 
-router.get('/', (req, res) => {
-  res.send('works');
-});
-
 router.get('/todaysPairs', (req, res) => {
   let todaysPairs = {
     date : new Date(),
@@ -14,8 +10,13 @@ router.get('/todaysPairs', (req, res) => {
         members : ['Ryan', 'Kris', 'Patrick', 'Francisco'],
         pairs : [
           ['Ryan', 'Kris'],
-          ['Patrick', 'Francisco']
+          ['Patrick', 'Kyle']
         ]
+      },
+      {
+        teamName : 'AMT2.0 Maintenance',
+        members  : ['Matt', 'Francisco', 'Casey', 'Mayank' ],
+        pairs    : []
       }
     ]
   };

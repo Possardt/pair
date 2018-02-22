@@ -1,0 +1,30 @@
+.pear{
+  margin: 0 -100px;
+  width:200px;
+  height: 200px;
+  position: absolute;
+}
+.top-pear{
+  opacity: 0.1;
+
+}
+
+.bottom-pear{
+  clip-path: inset(0 220px 0 0);
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-name: pearAnimation;
+  -webkit-animation-duration:4s;
+}
+
+@keyframes pearAnimation {
+  0%{
+    clip-path:inset(0px 220px 0px 0px);
+  }
+  80% {
+    clip-path: inset(0px 0px 0px 0px);
+  }
+  100% {
+    clip-path: inset(0px 0px 0px 0px);
+  }
+}
