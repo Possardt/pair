@@ -1,7 +1,9 @@
 <div class='main-content'>
   <h1>Today's Pairs</h1>
-  <div *ngIf='todaysPairs'>
-    <h2>{{todaysPairs.date | amLocal | amDateFormat: 'YYYY-MM-DD'}}</h2>
-    
+  <div *ngIf='dayInfo'>
+    <h2>{{dayInfo.date | amLocal | amDateFormat: 'YYYY-MM-DD'}}</h2>
+    <ng-template ngFor [ngForOf]='dayInfo.teams' let-team>
+      <team-info [team]='team'></team-info>
+    </ng-template>
   </div>
 </div>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PairService } from '../service/pair.service';
-import { PairInfo } from '../service/pairInfo';
+import { DayInfo } from '../service/DayInfo';
 import { MomentModule } from 'angular2-moment/moment.module';
+import { TeamComponent } from '../team/team.component';
 
 @Component({
   selector: 'pair-home',
@@ -10,12 +11,12 @@ import { MomentModule } from 'angular2-moment/moment.module';
   providers: [PairService]
 })
 export class PairComponent {
-  todaysPairs : PairInfo;
+  dayInfo : DayInfo;
 
   constructor(private pairService : PairService){}
 
   getPairs() {
-    this.pairService.getPairs().subscribe(pairs => this.todaysPairs = pairs);
+    this.pairService.getTodaysPairs().subscribe(pairs => this.dayInfo = pairs);
   }
 
   ngOnInit() {

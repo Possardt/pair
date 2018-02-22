@@ -4,13 +4,14 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
 import { PairComponent } from './home/pair.home.component';
 import { PairService } from './service/pair.service';
-
+import { TeamComponent } from './team/team.component';
 import { MomentModule } from 'angular2-moment/moment.module';
 
 
 @NgModule({
   declarations: [
-    PairComponent
+    PairComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

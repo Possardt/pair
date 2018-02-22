@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { PairInfo } from './pairInfo'
+import { DayInfo } from './dayInfo'
 
 @Injectable()
 export class PairService {
@@ -9,8 +9,8 @@ export class PairService {
   constructor(private http: HttpClient) { }
 
   private pairsUrl = '/api/todaysPairs';
-  getPairs (): Observable<PairInfo> {
-    return this.http.get<PairInfo>(this.pairsUrl)
+  getTodaysPairs (): Observable<DayInfo> {
+    return this.http.get<DayInfo>(this.pairsUrl)
   }
 
 }
