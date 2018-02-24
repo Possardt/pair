@@ -9,5 +9,6 @@ import { Team } from '../service/team';
 })
 export class TeamComponent {
   @Input() team: Team;
+  show: boolean = false;
 
 }

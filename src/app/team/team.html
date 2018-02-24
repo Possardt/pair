@@ -1,1 +1,9 @@
-<h5>{{team.teamName}}</h5>
+<div *ngIf='team.pairs.length; else addPairs'>
+  <h5>{{team.teamName}}</h5>
+</div>
+<ng-template #addPairs>
+  <button (click)='show = !show'> Add {{team.teamName}}'s pairs</button>
+  <div *ngIf='show'>
+    <span>yo</span>
+  </div>
+</ng-template>
