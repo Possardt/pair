@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PairService } from '../service/pair.service';
-import { DayInfo } from '../service/DayInfo';
+import { DayInfo } from '../service/dayInfo';
 import { MomentModule } from 'angular2-moment/moment.module';
 import { TeamComponent } from '../team/team.component';
 import { PearLoader } from '../loader/pear.loader.component';

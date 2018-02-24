@@ -1,10 +1,12 @@
 <div class='main-content'>
   <h1>Today's Pairs</h1>
-  <div *ngIf='dayInfo'>
+  <div *ngIf='dayInfo; else loader'>
     <h2>{{dayInfo.date | amLocal | amDateFormat: 'YYYY-MM-DD'}}</h2>
     <ng-template ngFor [ngForOf]='dayInfo.teams' let-team>
       <team-info [team]='team'></team-info>
     </ng-template>
   </div>
-  <!-- Not yet..<pear-loader></pear-loader> -->
+  <ng-template #loader>
+    <pear-loader></pear-loader>
+  </ng-template>
 </div>
