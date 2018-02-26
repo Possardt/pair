@@ -5,10 +5,8 @@
   <button (click)='show = !show'> Add {{team.teamName}}'s pairs</button>
   <div *ngIf='show'>
     <div class='add-todays-pairs'>
-      <!-- Repeat symbols for each team member -->
-      <!--   This will probably be an absolute position div that comes down-->
       <ng-template ngFor [ngForOf]='team.members' let-name>
-        <span (click)='setPair(name)'>
+        <span class='developer' (click)='setPair(name)'>
           <div class='initials-circle'>
             {{getInitials(name)}}
           </div>
