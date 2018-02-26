@@ -32,6 +32,14 @@
   -webkit-animation-name: greenBackgroundAnimation;
 }
 
+.pinkBackground {
+  -webkit-animation-name: pinkBackgroundAnimation;
+}
+
+.redBackground {
+ -webkit-animation-name: redBackgroundAnimation;
+}
+
 @keyframes blueBackgroundAnimation {
   0%{
     background-color: rgba(0,0,255,0);
@@ -53,5 +61,29 @@
   }
   100% {
     background-color: rgba(0,255,0,0.4);
+  }
+}
+
+@keyframes pinkBackgroundAnimation {
+  0%{
+    background-color: rgba(255,105,180,0);
+  }
+  50% {
+    background-color: rgba(255,105,180,0.2);
+  }
+  100% {
+    background-color: rgba(255,105,180,0.4);
+  }
+}
+
+@keyframes redBackgroundAnimation {
+  0%{
+    background-color: rgba(255, 0, 0, 0);
+  }
+  50% {
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+  100% {
+    background-color: rgba(255, 0, 0, 0.4);
   }
 }
