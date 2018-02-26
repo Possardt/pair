@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Team } from '../service/team';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'team-info',
@@ -11,10 +12,9 @@ export class TeamComponent {
   @Input() team: Team;
   show: boolean = false;
   lastSelected: string = '';
+  backgroundColor: string = '';
   colors: Array<string> = [
-    'rgba(0,255,0,0.4)', //lime
-    'rgba(0,0,255,0.4)', //blue
-    'rgba(0,255,255,0.4)' //aqua
+    'blueBackground'
   ];
 
   getInitials(name){
@@ -27,6 +27,7 @@ export class TeamComponent {
   setPair(name){
     if(!this.lastSelected || name === this.lastSelected){
       this.lastSelected = name;
+      this.backgroundColor = this.colors[0];
       return;
     }
     this.team.pairs.push([name, this.lastSelected]);

@@ -18,3 +18,22 @@
   text-align: center;
   width: 2em;
 }
+
+.blueBackground {
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-name: blueBackgroundAnimation;
+  -webkit-animation-duration:1s;
+}
+
+@keyframes blueBackgroundAnimation{
+  0%{
+    background-color: rgba(0,0,255,0);
+  }
+  50% {
+    background-color: rgba(0,0,255,0.2);
+  }
+  100% {
+    background-color: rgba(0,0,255,0.4);
+  }
+}

@@ -7,7 +7,7 @@
     <div class='add-todays-pairs'>
       <ng-template ngFor [ngForOf]='team.members' let-name>
         <span class='developer' (click)='setPair(name)'>
-          <div class='initials-circle'>
+          <div class='initials-circle' [ngClass]='backgroundColor'>
             {{getInitials(name)}}
           </div>
           {{name}}
