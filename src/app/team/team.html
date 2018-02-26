@@ -1,13 +1,15 @@
-<div *ngIf='team.pairs.length === 3; else addPairs'>
+<div *ngIf='team.pairs.length === 8; else addPairs'>
   <h5>{{team.teamName}}</h5>
 </div>
 <ng-template #addPairs>
   <button (click)='show = !show'> Add {{team.teamName}}'s pairs</button>
   <div *ngIf='show'>
     <div class='add-todays-pairs'>
-      <ng-template ngFor [ngForOf]='team.members' let-name>
-        <span class='developer' (click)='setPair(name)'>
-          <div class='initials-circle' [ngClass]='backgroundColor'>
+      <ng-template ngFor [ngForOf]='team.members' let-name let-i>
+        <span class='developer'
+              (click)='selectDeveloper(name)'>
+          <div class='initials-circle'
+               [ngClass]='getNameClass(name)'>
             {{getInitials(name)}}
           </div>
           {{name}}

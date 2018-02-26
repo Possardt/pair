@@ -11,11 +11,24 @@ import { NgClass } from '@angular/common';
 export class TeamComponent {
   @Input() team: Team;
   show: boolean = false;
-  lastSelected: string = '';
-  backgroundColor: string = '';
-  colors: Array<string> = [
-    'blueBackground'
+  backgroundColors: Array<string> = [
+    'blueBackground',
+    'greenBackground'
+    // 'pinkBackground',
+    // 'redBackground'
   ];
+  lastSelected: string = '';
+  currentColor: string = '';
+  nameToBackgroundColor : Object = {};
+
+  getNameClass(name) {
+    return this.nameToBackgroundColor[name];
+  }
+
+  // setNameColor(name) {
+  //   console.log(this.nameToBackgroundColor);
+  //   this.nameToBackgroundColor[name] = this.currentColor;
+  // }
 
   getInitials(name){
     return name
@@ -24,14 +37,24 @@ export class TeamComponent {
       .join('');
   }
 
-  setPair(name){
-    if(!this.lastSelected || name === this.lastSelected){
+  selectDeveloper(name){
+    if(name === this.lastSelected) return;
+
+    if(!this.lastSelected){
       this.lastSelected = name;
-      this.backgroundColor = this.colors[0];
+      this.currentColor = this.backgroundColors.pop();
+      this.nameToBackgroundColor[name] = this.currentColor;
       return;
     }
-    this.team.pairs.push([name, this.lastSelected]);
-    this.lastSelected = '';
+    else if(this.lastSelected !== name){
+      this.team.pairs.push([name, this.lastSelected]);
+      this.nameToBackgroundColor[name] = this.currentColor;
+      this.lastSelected = '';
+      this.currentColor = this.backgroundColors.pop();
+      console.log(this.backgroundColors);
+    }
+    //addPairs
+
   }
 
 }

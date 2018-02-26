@@ -17,16 +17,22 @@
   margin: 0 auto;
   text-align: center;
   width: 2em;
+
+  /* Hope this works LOL */
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-duration:1s;
+  animation-fill-mode: forwards;
 }
 
 .blueBackground {
-  -webkit-animation-iteration-count:infinite;
-  -webkit-animation-timing-function:linear;
   -webkit-animation-name: blueBackgroundAnimation;
-  -webkit-animation-duration:1s;
 }
 
-@keyframes blueBackgroundAnimation{
+.greenBackground {
+  -webkit-animation-name: greenBackgroundAnimation;
+}
+
+@keyframes blueBackgroundAnimation {
   0%{
     background-color: rgba(0,0,255,0);
   }
@@ -35,5 +41,17 @@
   }
   100% {
     background-color: rgba(0,0,255,0.4);
+  }
+}
+
+@keyframes greenBackgroundAnimation {
+  0%{
+    background-color: rgba(0,255,0,0);
+  }
+  50% {
+    background-color: rgba(0,255,0,0.2);
+  }
+  100% {
+    background-color: rgba(0,255,0,0.4);
   }
 }
