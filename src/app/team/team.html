@@ -1,9 +1,20 @@
-<div *ngIf='team.pairs.length; else addPairs'>
+<div *ngIf='team.pairs.length === 3; else addPairs'>
   <h5>{{team.teamName}}</h5>
 </div>
 <ng-template #addPairs>
   <button (click)='show = !show'> Add {{team.teamName}}'s pairs</button>
   <div *ngIf='show'>
-    <span>yo</span>
+    <div class='add-todays-pairs'>
+      <!-- Repeat symbols for each team member -->
+      <!--   This will probably be an absolute position div that comes down-->
+      <ng-template ngFor [ngForOf]='team.members' let-name>
+        <span (click)='setPair(name)'>
+          <div class='initials-circle'>
+            {{getInitials(name)}}
+          </div>
+          {{name}}
+        </span>
+      </ng-template>
+    </div>
   </div>
 </ng-template>

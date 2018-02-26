@@ -7,7 +7,7 @@ router.get('/todaysPairs', (req, res) => {
     teams : [
       {
         teamName : 'myAssortment',
-        members : ['Ryan', 'Kris', 'Patrick', 'Francisco'],
+        members : ['Ryan Possardt', 'Kris Green', 'Patrick Yeung', 'Kyle Dye'],
         pairs : [
           ['Ryan', 'Kris'],
           ['Patrick', 'Kyle']
@@ -15,7 +15,7 @@ router.get('/todaysPairs', (req, res) => {
       },
       {
         teamName : 'AMT2.0 Maintenance',
-        members  : ['Matt', 'Francisco', 'Casey', 'Mayank' ],
+        members  : ['Matt Westbrook', 'Francisco Quesada Lara', 'Casey Rogers', 'Mayank Singh' ],
         pairs    : []
       }
     ]
