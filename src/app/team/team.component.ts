@@ -32,10 +32,15 @@ export class TeamComponent {
       .join('');
   }
 
-  findAndRemovePair(name){
+  checkForAndDeleteExistingPair(name){
     for(let i = 0; i < this.team.pairs.length; i++){
       if(this.team.pairs[i].indexOf(name) !== -1){
-        return this.team.pairs.splice(i, 1)[0];
+        let pair = this.team.pairs.splice(i, 1)[0];
+        let color = this.nameToBackgroundColor[pair[0]];
+        this.nameToBackgroundColor[pair[0]] = '';
+        this.nameToBackgroundColor[pair[1]] = '';
+        this.backgroundColors.push(color);
+        return;
       }
     }
     return false;
@@ -44,39 +49,20 @@ export class TeamComponent {
   selectDeveloper(name){
     if(name === this.lastSelected) return;
 
-    //initial state
+    this.checkForAndDeleteExistingPair(name);
     if(!this.lastSelected){
       this.lastSelected = name;
-      //only pop backgroundColor if you need to.
       this.currentColor = this.currentColor || this.backgroundColors.pop();
       this.nameToBackgroundColor[name] = this.currentColor;
       return;
     }
     else if(this.lastSelected !== name){
-
-      //check if the person is already paired with someone else
-      // if he/she is, remove that pair and add the color back to be
-      // used again.
-      let existingPair = this.findAndRemovePair(name);
-      if(existingPair){
-        console.log(existingPair);
-        let dev1 = existingPair[0];
-        let dev2 = existingPair[0];
-        let color = this.nameToBackgroundColor[dev1];
-        this.backgroundColors.push(color);
-        this.nameToBackgroundColor[dev1] = '';
-        this.nameToBackgroundColor[dev2] = '';
-        this.nameToBackgroundColor[name] = this.currentColor;
-      }
       this.team.pairs.push([name, this.lastSelected]);
       this.nameToBackgroundColor[name] = this.currentColor;
       this.lastSelected = '';
       this.currentColor = this.backgroundColors.pop();
-
-      console.log(this.backgroundColors);
+      return;
     }
-    //addPairs
-
   }
 
 }
